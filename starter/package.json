@@ -1,0 +1,22 @@
+{
+  "name": "pridemakers",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "next",
+    "build": "next build -o build",
+    "start": "npm run dev"
+  },
+  "author": "Lachlan Campbell",
+  "license": "MIT",
+  "engines": {
+    "node": "14.x"
+  },
+  "dependencies": {
+    "next": "^10.2.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "glitch": {
+    "projectType": "generated_static"
+  }
+}

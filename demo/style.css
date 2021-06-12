@@ -1,0 +1,22 @@
+body {
+  font-family: ui-rounded, system-ui, Roboto, "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  font-weight: 900;
+}
+
+header {
+  display: grid;
+  grid-gap: 24px;
+}
+
+@media (min-width: 32em) {
+  header {
+    grid-template-columns: 1fr 3fr;
+  }
+}
+
+img {
+  border-radius: 8px;
+}

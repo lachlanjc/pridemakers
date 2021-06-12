@@ -1,0 +1,240 @@
+import { Grid, Flex, Box, Text, Image, Avatar, Card } from 'theme-ui'
+
+export const MessageListItem = ({ time, message, name }) => (
+  <Box
+    sx={{
+      borderBlock: '1px solid #ddd',
+      width: 512,
+      textAlign: 'left',
+      p: 3,
+      bg: 'snow',
+    }}
+  >
+    <Flex sx={{ alignItems: 'baseline', justifyContent: 'space-between' }}>
+      <Text variant="headline" m={0}>
+        {name}
+      </Text>
+      <Text variant="caption" color="muted">
+        {time}
+      </Text>
+    </Flex>
+    <Text>{message}</Text>
+  </Box>
+)
+
+# Flamboyant Intro<br />to Next.js
+
+Lachlan Campbell  
+@lachlanjc – they/them
+
+<small>2021-06-12</small>
+
+---
+
+<Avatar
+  src="https://github.com/lachlanjc.png"
+  size={128}
+  alt="lachlan avatar"
+/>
+
+## About me
+
+I love making websites: these days, mostly with React & Next.js!
+
+I’m a web designer-developer at [Watershed Climate](https://www.watershedclimate.com).
+
+🌈 I’m queer & non-binary. Hi!
+
+---
+
+**JavaScript** is the language of interactivity on the web.
+
+![](https://about.fb.com/wp-content/uploads/2012/08/2764.png?w=890)
+
+---
+
+### For its first ~decade, JavaScript was **imperative**.
+
+Content is put on the page by the server,<br />then updated with JavaScript.
+
+```
+document.getElementsByClassName('message-list-item')[0].style.backgroundColor = 'blue'
+```
+
+---
+
+<Invert>
+
+
+# Data → UI
+
+<br />
+
+### (A function!)
+
+</Invert>
+
+
+---
+
+<Invert>
+
+
+# “Components”
+
+<br />
+
+![components on messenger](https://cloud-y5iqnef2f-hack-club-bot.vercel.app/02764.png)
+
+</Invert>
+
+
+---
+
+```
+function MessageListItem({ name, message, time }) {
+  const nameHTML = "<strong>" + name + "</strong>"
+  const msgHTML = "<small>" + message + "</small>"
+  const timeHTML = "<time>" + time + "</time>"
+  return '<li>' + nameHTML + msgHTML + timeHTML + '</li>'
+}
+```
+
+<Grid  columns={2} sx={{alignItems:'center', gridColumnGap:4,mt:5}}>
+
+
+## Data
+
+## UI
+
+```
+MessageListItem({
+  name: 'Best friend',
+  message: 'Hi there!!'
+  time: '1 hour ago'
+})
+```
+
+<MessageListItem name="Best friend" message="Hi there!!" time="1 hour ago" />
+
+</Grid>
+
+
+---
+
+## React & JSX<br />let you write<br />**declarative UI.**
+
+<br />
+
+Data is the source of truth.
+
+Render **components** through **props**.
+
+---
+
+## A component
+
+```js
+function MessageListItem({ name, message, time }) {
+  return (
+    <li>
+      <time>{formatTime(time)}</time>
+      <strong>{name}</strong>
+      <small>{message}</small>
+    </li>
+  )
+}
+```
+
+<MessageListItem name="Best friend" message="Hi there!!" time="1 hour ago" />
+
+---
+
+<Grid columns={2} sx={{alignItems:'center', gridColumnGap:5,mt:5}}>
+
+
+```
+function MessageList() {
+  return (
+    <div>
+      <h1>Inbox</h1>
+      <MessageListItem
+        name="Best friend"
+        message="Hi there!!"
+        time="1 hour ago"
+      />
+      <MessageListItem
+        name="Cool friend"
+        message="sup"
+        time="3 hours ago"
+      />
+    </div>
+  )
+}
+```
+
+<Card
+  sx={{
+    p: [0, 0],
+    width: 512,
+    border: '2px solid #ddd',
+    boxShadow: 'none',
+  }}
+>
+  <Text variant="headline" sx={{ fontSize: 5, color: 'pink', mb: 3 }}>
+    Inbox
+  </Text>
+  <MessageListItem name="Best friend" message="Hi there!!" time="1 hour ago" />
+  <MessageListItem name="Cool friend" message="sup" time="3 hours ago" />
+</Card>
+
+</Grid>
+
+
+---
+
+```
+const messagesData = [
+  { name: 'Best friend', message: 'Hi there!!', time: '1 hour ago' },
+  { name: 'Cool friend', message: 'sup', time: '3 hours ago' },
+]
+```
+
+```
+function MessageList({ messages }) {
+  return (
+    <ul>
+      <h1>Inbox</h1>
+      {messages.map(data => <MessageListItem {...data} />)}
+    </ul>
+  )
+}
+```
+
+```
+<MessageList messages={messagesData} />
+```
+
+---
+
+## Putting HTML in the<br />JavaScript was a<br />**radical idea.**
+
+But developers turned out to love it…eventually.
+
+---
+
+Facebook created React in 2013.
+
+### React runs on webpages.
+
+<br />
+
+Vercel created Next.js, a framework<br />to build multi-page websites with React.
+
+### Next.js wraps React to make development easier.
+
+---
+
+## [Let’s start coding!](https://glitch.com/edit/#!/pridemakers-next-blank?path=package.json%3A11%3A14)
+
+---

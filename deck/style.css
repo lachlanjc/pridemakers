@@ -1,0 +1,60 @@
+@font-face {
+    font-family: Whyte;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://cdn.glitch.com/4d99d0f7-c364-44a5-b1b9-2c3c3f5cb333%2FWhyte-Regular-412d6af025a4cfe3d36ab0850f3b258f.woff2?v=1582525105493) format("woff2");
+    font-display:swap
+}
+
+@font-face {
+    font-family: Whyte;
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://cdn.glitch.com/4d99d0f7-c364-44a5-b1b9-2c3c3f5cb333%2FWhyte-Bold-259eea7f642aa1973e3688f57b803286.woff2?v=1582525121432) format("woff2");
+    font-display:swap
+}
+
+@font-face {
+    font-family: WhyteInktrap;
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://cdn.glitch.com/4d99d0f7-c364-44a5-b1b9-2c3c3f5cb333%2FWhyteInktrap-Bold-d5fda619e54a4948a42c0f133a4ad5ed.woff2?v=1582525136783) format("woff2");
+    font-display: swap
+}
+
+/*
+Safari has a rendering bug that sometimes prevented text from rendering on certain slides.
+This is a hack that forces each new page to re-render.
+*/
+* {
+  -webkit-transform: translate3d(0,0,0);
+}
+
+body {
+  margin: 0;
+}
+
+pre,
+code {
+  font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  background-color: #e0e6ed !important;
+  color: #a633d6;
+  padding: 0 0.25em;
+  margin: 0 0.25em;
+  border-radius: 0.25em;
+}
+
+pre {
+  margin: 1rem 0;
+  border-radius: 1rem;
+}
+pre > code {
+  color: #a633d6 !important;
+}
+pre > code,
+.npm__react-simple-code-editor__textarea + pre {
+  background-color: transparent !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
