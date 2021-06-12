@@ -16,6 +16,7 @@ function Media({ id, media }) {
           height={444}
           src={media['Poster']}
           alt={media['Title']}
+          objectFit="contain"
           placeholder="blur"
         />
         <div>
@@ -24,7 +25,7 @@ function Media({ id, media }) {
           </a>
           <p>
             {[media['Genre'], media['Language'], media['Released']]
-              .filter(data => data !== 'N/A')
+              .filter((data) => data !== 'N/A')
               .join(' – ')}
             {media['type'] === 'series'
               ? ' – ' +
@@ -73,7 +74,7 @@ export default MediaPage
 
 export const getStaticPaths = () => {
   const ids = Object.keys(recommendations)
-  const paths = ids.map(imdb => ({ params: { imdb } }))
+  const paths = ids.map((imdb) => ({ params: { imdb } }))
   return { paths, fallback: true }
 }
 
@@ -81,7 +82,7 @@ export const getStaticProps = async ({ params }) => {
   const { imdb: id } = params
   const media = await fetch(
     `http://www.omdbapi.com/?i=${id}&plot=full&apikey=${process.env.OMDB_API_KEY}`
-  ).then(res => res.json())
+  ).then((res) => res.json())
   console.log(media)
   return { props: { id, media } }
 }
