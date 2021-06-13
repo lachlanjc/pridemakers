@@ -7,4 +7,6 @@ Starter on Glitch: <https://glitch.com/~pridemakers-next-starter>
 
 Live demo: <https://pridemakers-demo.vercel.app>
 
+Video recording: < https://youtu.be/aEbxzp4Fqg4>
+
 MIT License
